@@ -7,14 +7,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
-
 @RestController
 @RequestMapping("/api/doctor")
 @CrossOrigin(origins = "*")
 public class DoctorController {
     @Autowired
     private DoctorService doctorService;
-
     @GetMapping("/all")
     public List<DoctorModel> getAllDoctors(){
         return doctorService.getAllDoctors();
@@ -26,9 +24,7 @@ public class DoctorController {
     }
 
     @PostMapping("/save")
-    public DoctorModel saveDoctor(@RequestBody DoctorModel doctorModel){
-        return doctorService.saveDoctor(doctorModel);
-    }
+    public DoctorModel saveDoctor(@RequestBody DoctorModel doctorModel){ return doctorService.saveDoctor(doctorModel); }
 
     @DeleteMapping("/delete/{id}")
     public boolean deleteDoctor(@PathVariable Integer id){
@@ -36,7 +32,6 @@ public class DoctorController {
     }
 
     @PutMapping("/update")
-    public DoctorModel updateDoctor(@RequestBody DoctorModel doctorModel){
-        return doctorService.updateDoctor(doctorModel);
+    public DoctorModel updateDoctor(@RequestBody DoctorModel doctorModel){ return doctorService.updateDoctor(doctorModel);
     }
 }
